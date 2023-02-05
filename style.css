@@ -1,0 +1,163 @@
+/* You will write the CSS rules for your Cookie Clicker game here! */
+#stage{
+    background: #001200;
+    color: aquamarine;
+    font-family: Georgia, sans-serif; 
+
+    display: flex;
+    position: absolute;
+
+    /* This top/left lines are necessary, otherwise some weird white outline appears-*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    align-content: center;
+    align-items: stretch;
+    justify-content: space-evenly;
+}   
+/* This should be the left-side, where the "cookie" is. */
+
+#cookie-section{
+    display: flex;
+    /* Makes coffe count, rate, and image stack column-like */
+    flex-direction: column;
+
+    /* Because we set the flex-direction to column, this centers it on the y-axis. */
+    /* You're used to justify==x-axis, align-items==y-axis, but that's just the default:
+        when things are in the flex-direction of "row" */
+    /* Centers the the image and lines vertically */
+    align-items: center;
+    justify-content: center;
+
+    /* Helps me visualize the column. */
+    /* border: 1px solid black; */
+}
+
+/* This should hold the title and dynamic value of units produced. */
+.counter-container{
+    font-size: 30px;
+}
+
+/* This should hold the dynamic value of automated production of units. */
+.production-rate-container{
+    font-size: 20px;
+}
+
+
+/* And this should be the right side of our stage, where new producers appear dynamically. */
+#ranks-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+
+    align-self: flex-end;
+    /* border: 2px solid black; */
+}
+
+.producers-header {
+    font-size: 25px;
+    position: relative;
+
+    margin: 5px
+}
+/* This should be the format of a producer */
+/* Maybe I need to define the elements here, then define them in JS when I spawn em. */
+.producer{
+    margin: 5px;
+
+    padding: 10px;
+
+    display:flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+    width: auto;
+    border: 1px solid aquamarine;
+
+    /* Makes the corners curve? */
+    border-radius: 10px;
+}
+.producer-left-column{
+
+    display:flex;
+    flex-direction: column;
+
+    justify-content: space-evenly;
+    align-items: center;
+}
+.producer-right-column{
+    display:flex;
+    flex-direction: column;
+    
+    justify-content: space-evenly;
+    align-items: center;
+}
+.producer-title{
+    display:block
+}
+
+/* I don't even know what this is for... tags? */
+/* button{
+    color: red;
+} */
+.buy-button{
+    /* I don't want a backgroun color yet, I need feedback when I'm clicking it. */
+    /* background: cyan; */
+    color: rgb(0, 0, 40);
+    /* display: block; */
+}
+
+.producer-quantity{
+    display:inline-block
+}
+
+.producer-quantity-value{
+    display:inline-block
+}
+
+.producer-rate{
+    display:inline-block
+}
+
+.producer-rate-value{
+    display:inline-block
+}
+
+.producer-cost{
+    display:inline-block
+}
+.producer-cost-value{
+    display:inline-block
+}
+/* The image of my "cookie" */
+#arduinoPng{
+    /*Make's it impossible to "click-and-drag" over the item on the page*/
+    /* Think of how you select groups of text on a page. I guess this prevents the 
+    images from being apart of that typically highlighted selection. */
+    user-select: none;
+
+    /* They wrote this in the solution, but I've no idea what it does. */
+    /* font-size: 200px; */
+
+    /* When the mouse hovers over the contents, it changes to an-"over an option" pointer */
+    cursor: pointer;
+
+    width: 250px;
+    height:170px;
+}
+
+
+/* This should be the layout of each producer */
+.cookie-ranks{
+    display: flexbox;
+    flex-direction: column;
+
+    align-items: center;
+    width: 100%;
+    /* border: 2px solid black; */
+    border: 2px solid cyan;
+}
